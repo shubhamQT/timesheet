@@ -1,0 +1,54 @@
+{
+  "id": "fill-timesheet-edit-total-hours",
+  "testPlanId": "dde6d6bb-77d3-4f06-99da-09f463298b1a",
+  "requirementId": "a53fb94f-b113-4983-bc58-6083dc49f6ad",
+  "suiteName": "Fill Timesheet",
+  "case": {
+    "id": "fill-timesheet-edit-total-hours",
+    "title": "User can edit the total hours before submitting timesheet",
+    "priority": "P1",
+    "platforms": [
+      "chrome"
+    ],
+    "preconditions": [],
+    "steps": [
+      {
+        "id": "step-1",
+        "action": "openUrl",
+        "targetDescription": "Navigate to ESS dashboard",
+        "value": "https://ess.breezingminds.com/dashboard"
+      },
+      {
+        "id": "step-2",
+        "action": "tap",
+        "targetDescription": "Click Fill Timesheet button",
+        "locatorHint": "[data-testid=fill-timesheet-btn]"
+      },
+      {
+        "id": "step-3",
+        "action": "fill",
+        "targetDescription": "Fill Total Hours",
+        "locatorHint": "[data-testid=total-hours-input]",
+        "value": "8"
+      },
+      {
+        "id": "step-4",
+        "action": "fill",
+        "targetDescription": "Edit Total Hours",
+        "locatorHint": "[data-testid=total-hours-input]",
+        "value": "7"
+      },
+      {
+        "id": "step-5",
+        "action": "assertValue",
+        "targetDescription": "Total Hours field value is 7",
+        "locatorHint": "[data-testid=total-hours-input]",
+        "assertion": "7"
+      }
+    ],
+    "tags": [
+      "@functional",
+      "@regression"
+    ]
+  }
+}

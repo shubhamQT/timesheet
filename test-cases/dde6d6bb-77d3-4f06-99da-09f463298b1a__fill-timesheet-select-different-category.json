@@ -1,0 +1,53 @@
+{
+  "id": "fill-timesheet-select-different-category",
+  "testPlanId": "dde6d6bb-77d3-4f06-99da-09f463298b1a",
+  "requirementId": "a53fb94f-b113-4983-bc58-6083dc49f6ad",
+  "suiteName": "Fill Timesheet",
+  "case": {
+    "id": "fill-timesheet-select-different-category",
+    "title": "User can select a different category when filling timesheet",
+    "priority": "P1",
+    "platforms": [
+      "chrome"
+    ],
+    "preconditions": [],
+    "steps": [
+      {
+        "id": "step-1",
+        "action": "openUrl",
+        "targetDescription": "Navigate to ESS dashboard",
+        "value": "https://ess.breezingminds.com/dashboard"
+      },
+      {
+        "id": "step-2",
+        "action": "tap",
+        "targetDescription": "Click Fill Timesheet button",
+        "locatorHint": "[data-testid=fill-timesheet-btn]"
+      },
+      {
+        "id": "step-3",
+        "action": "tap",
+        "targetDescription": "Click Category dropdown",
+        "locatorHint": "[data-testid=category-dropdown]"
+      },
+      {
+        "id": "step-4",
+        "action": "fill",
+        "targetDescription": "Search and select category",
+        "locatorHint": "[data-testid=category-search-input]",
+        "value": "Coding"
+      },
+      {
+        "id": "step-5",
+        "action": "assertValue",
+        "targetDescription": "Category field value is Coding",
+        "locatorHint": "[data-testid=category-dropdown]",
+        "assertion": "Coding"
+      }
+    ],
+    "tags": [
+      "@functional",
+      "@regression"
+    ]
+  }
+}

@@ -1,6 +1,4 @@
 {
-  "name": "qa",
-  "slug": "qa",
   "baseURL": "https://ess.breezingminds.com/login",
   "browser": "chromium",
   "headless": true,

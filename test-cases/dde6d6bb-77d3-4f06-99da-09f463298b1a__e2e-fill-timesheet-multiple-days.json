@@ -1,0 +1,129 @@
+{
+  "id": "e2e-fill-timesheet-multiple-days",
+  "testPlanId": "dde6d6bb-77d3-4f06-99da-09f463298b1a",
+  "requirementId": "a53fb94f-b113-4983-bc58-6083dc49f6ad",
+  "suiteName": "Fill Timesheet",
+  "case": {
+    "id": "e2e-fill-timesheet-multiple-days",
+    "title": "E2E: User fills timesheet for multiple days in sequence",
+    "priority": "P1",
+    "platforms": [
+      "chrome"
+    ],
+    "preconditions": [],
+    "steps": [
+      {
+        "id": "step-1",
+        "action": "openUrl",
+        "targetDescription": "Navigate to ESS dashboard",
+        "value": "https://ess.breezingminds.com/dashboard"
+      },
+      {
+        "id": "step-2",
+        "action": "tap",
+        "targetDescription": "Click Fill Timesheet button",
+        "locatorHint": "[data-testid=fill-timesheet-btn]"
+      },
+      {
+        "id": "step-3",
+        "action": "tap",
+        "targetDescription": "Click Project dropdown",
+        "locatorHint": "[data-testid=project-dropdown]"
+      },
+      {
+        "id": "step-4",
+        "action": "fill",
+        "targetDescription": "Search and select project",
+        "locatorHint": "[data-testid=project-search-input]",
+        "value": "Quarks Internal"
+      },
+      {
+        "id": "step-5",
+        "action": "tap",
+        "targetDescription": "Click Date picker",
+        "locatorHint": "[data-testid=date-picker]"
+      },
+      {
+        "id": "step-6",
+        "action": "selectOption",
+        "targetDescription": "Select date",
+        "locatorHint": "[data-testid=date-picker]",
+        "value": "11-06-2026"
+      },
+      {
+        "id": "step-7",
+        "action": "tap",
+        "targetDescription": "Click Category dropdown",
+        "locatorHint": "[data-testid=category-dropdown]"
+      },
+      {
+        "id": "step-8",
+        "action": "fill",
+        "targetDescription": "Search and select category",
+        "locatorHint": "[data-testid=category-search-input]",
+        "value": "Coding"
+      },
+      {
+        "id": "step-9",
+        "action": "fill",
+        "targetDescription": "Fill Total Hours",
+        "locatorHint": "[data-testid=total-hours-input]",
+        "value": "8"
+      },
+      {
+        "id": "step-10",
+        "action": "fill",
+        "targetDescription": "Fill Task Detail/Ticket URL",
+        "locatorHint": "[data-testid=task-detail-input]",
+        "value": "working on ess"
+      },
+      {
+        "id": "step-11",
+        "action": "tap",
+        "targetDescription": "Click Submit button",
+        "locatorHint": "[data-testid=submit-btn]"
+      },
+      {
+        "id": "step-12",
+        "action": "assertVisible",
+        "targetDescription": "Success message is visible",
+        "locatorHint": "[data-testid=success-msg]"
+      },
+      {
+        "id": "step-13",
+        "action": "tap",
+        "targetDescription": "Click Fill Timesheet button again",
+        "locatorHint": "[data-testid=fill-timesheet-btn]"
+      },
+      {
+        "id": "step-14",
+        "action": "tap",
+        "targetDescription": "Click Date picker",
+        "locatorHint": "[data-testid=date-picker]"
+      },
+      {
+        "id": "step-15",
+        "action": "selectOption",
+        "targetDescription": "Select next date",
+        "locatorHint": "[data-testid=date-picker]",
+        "value": "12-06-2026"
+      },
+      {
+        "id": "step-16",
+        "action": "tap",
+        "targetDescription": "Click Submit button",
+        "locatorHint": "[data-testid=submit-btn]"
+      },
+      {
+        "id": "step-17",
+        "action": "assertVisible",
+        "targetDescription": "Success message is visible",
+        "locatorHint": "[data-testid=success-msg]"
+      }
+    ],
+    "tags": [
+      "@e2e",
+      "@regression"
+    ]
+  }
+}

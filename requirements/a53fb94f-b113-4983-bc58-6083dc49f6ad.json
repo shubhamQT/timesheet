@@ -1,0 +1,6 @@
+{
+  "id": "a53fb94f-b113-4983-bc58-6083dc49f6ad",
+  "title": "Fill Timesheet",
+  "content": " TS-001 — Fill Timesheet \n Module: Fill Timesheet\n Tags: regression\n Priority: High\n\n Description:  Verify that a user can successfully fill and submit a timesheet after logging into ESS via SSO.\n \n Acceptance Criteria:\n\n 1. User should be able to login to the ESS (URL) via SSO Login.\n 2. User should be able to click the Fill Timesheet button on dashboard page.\n 3. User should be able to click the project and search \"projectName\" to select.\n 4. User should be able to click on Date and select \"date\".\n 5. User should be able to click category and search \"category\".\n 6. User should be able to click on Total Hour and fill \"totalHours\" in the field.\n 7. User should be able to click on Task Detail/Ticket URL and fill \"details\".\n 8. User should be able to click on submit button.\n \n Test Data:\n Url: https://ess.breezingminds.com/dashboard\n projectName: Quarks Internal\n date: 11-06-2026\n category: Coding\n totalHours: 8\n details: working on ess\n ",
+  "createdAt": "2026-06-11T10:25:09.046Z"
+}
