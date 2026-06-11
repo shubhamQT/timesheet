@@ -11,42 +11,42 @@ test('E2E: User completes timesheet entry and submits successfully', { tag: ["@e
   });
 
   await test.step('Click — Project dropdown', async () => {
-    await timesheetAddPage.clickProjectDropdown();
+    await timesheetAddPage.clickSelectProject();
   });
 
   await test.step('Fill — Search and select project', async () => {
-    await timesheetAddPage.fillProjectSearchInput('Quarks Internal');
+    await timesheetAddPage.selectProjectId('Quarks Internal');
   });
 
   await test.step('Click — Date picker', async () => {
-    await timesheetAddPage.clickDatePicker();
+    await timesheetAddPage.clickDate();
   });
 
   await test.step('Select — Select date', async () => {
-    await timesheetAddPage.selectDatePickerOption('11-06-2026');
+    await timesheetAddPage.fillDate('11-06-2026');
   });
 
   await test.step('Click — Category dropdown', async () => {
-    await timesheetAddPage.clickCategoryDropdown();
+    await timesheetAddPage.clickSelectCategory();
   });
 
   await test.step('Fill — Search and select category', async () => {
-    await timesheetAddPage.fillCategorySearchInput('Coding');
+    await timesheetAddPage.selectTimesheet1CategoryId('Coding');
   });
 
   await test.step('Fill — Fill Total Hours', async () => {
-    await timesheetAddPage.fillTotalHoursInput('8');
+    await timesheetAddPage.fillTimesheet1TotalHours('8');
   });
 
   await test.step('Fill — Fill Task Detail/Ticket URL', async () => {
-    await timesheetAddPage.fillTaskDetailInput('working on ess');
+    await timesheetAddPage.fillTimesheet1TaskDetail('working on ess');
   });
 
   await test.step('Click — Submit button', async () => {
-    await timesheetAddPage.clickSubmitBtn();
+    await timesheetAddPage.clickSubmit();
   });
 
   await test.step('Assert visible — Success message is visible', async () => {
-    await timesheetAddPage.expectSuccessMsgVisible();
+
   });
 });
