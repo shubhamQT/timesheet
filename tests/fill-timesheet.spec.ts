@@ -1,9 +1,11 @@
 import { test, expect } from '../support/fixtures';
 import testData from '../testdata/test-data.json';
 
+
 test('E2E: User completes timesheet entry and submits successfully', { tag: ["@e2e","@regression","@P0","@e2e-fill-timesheet-complete-journey"] }, async ({ page, dashboardPage, timesheetAddPage }) => {
   await test.step('Open — Navigate to ESS dashboard', async () => {
     await page.goto('/dashboard');
+    await expect(page).not.toHaveTitle(/404|Error|Not Found/i);
   });
 
   await test.step('Click — Fill Timesheet button', async () => {
@@ -15,7 +17,7 @@ test('E2E: User completes timesheet entry and submits successfully', { tag: ["@e
   });
 
   await test.step('Fill — Search and select project', async () => {
-    await timesheetAddPage.selectProjectId('Quarks Internal');
+    await timesheetAddPage.selectProjectId(testData.e2eUserCompletesTimesheetEntryAndSubmitsSuccessfully.searchAndSelectProject);
   });
 
   await test.step('Click — Date picker', async () => {
@@ -23,7 +25,7 @@ test('E2E: User completes timesheet entry and submits successfully', { tag: ["@e
   });
 
   await test.step('Select — Select date', async () => {
-    await timesheetAddPage.fillDate('11-06-2026');
+    await timesheetAddPage.fillDate(testData.e2eUserCompletesTimesheetEntryAndSubmitsSuccessfully.selectDate);
   });
 
   await test.step('Click — Category dropdown', async () => {
@@ -31,15 +33,15 @@ test('E2E: User completes timesheet entry and submits successfully', { tag: ["@e
   });
 
   await test.step('Fill — Search and select category', async () => {
-    await timesheetAddPage.selectTimesheet1CategoryId('Coding');
+    await timesheetAddPage.selectTimesheet1CategoryId(testData.e2eUserCompletesTimesheetEntryAndSubmitsSuccessfully.searchAndSelectCategory);
   });
 
   await test.step('Fill — Fill Total Hours', async () => {
-    await timesheetAddPage.fillTimesheet1TotalHours('8');
+    await timesheetAddPage.fillTimesheet1TotalHours(testData.e2eUserCompletesTimesheetEntryAndSubmitsSuccessfully.fillTotalHours);
   });
 
   await test.step('Fill — Fill Task Detail/Ticket URL', async () => {
-    await timesheetAddPage.fillTimesheet1TaskDetail('working on ess');
+    await timesheetAddPage.fillTimesheet1TaskDetail(testData.e2eUserCompletesTimesheetEntryAndSubmitsSuccessfully.fillTaskDetailTicketUrl);
   });
 
   await test.step('Click — Submit button', async () => {
@@ -47,6 +49,6 @@ test('E2E: User completes timesheet entry and submits successfully', { tag: ["@e
   });
 
   await test.step('Assert visible — Success message is visible', async () => {
-
+    await timesheetAddPage.expectBreezingMindsVisible();
   });
 });
